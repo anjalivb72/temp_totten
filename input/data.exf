@@ -1,0 +1,92 @@
+# *********************
+# External Forcing Data
+# *********************
+#
+ &EXF_NML_01
+#TO COMBINE WITH ALLOW_ZENITH_ANGLE:
+# useExfZenIncoming = .TRUE., 
+# select_ZenAlbedo  = 1,
+#
+ exf_iprec         = 32,
+ exf_yftype        = 'RL',
+ useExfYearlyFields= .TRUE.,
+ useExfCheckRange  = .FALSE.,
+ useRelativeWind   = .TRUE.,
+# useRelativeWind   = .FALSE.,
+ &
+#
+ &EXF_NML_02
+ atempfile         = 'ERA5_tmp2m_degC_totten',
+ aqhfile           = 'ERA5_spfh2m_totten',
+ precipfile        = 'ERA5_rain_totten',
+ uwindfile         = 'ERA5_u10m_totten',
+ vwindfile         = 'ERA5_v10m_totten',
+ swdownfile        = 'ERA5_dsw_totten',
+ lwdownfile        = 'ERA5_dlw_totten',
+ runoffFile        = 'runoff_Core_cnyf2p0_DJ_bg6_ms_V1_totten.bin',
+# apressurefile     = 'ERA5_pres_totten',  
+#
+ atempstartdate1   = 19920101,
+ atempstartdate2   = 000000,
+ atempperiod       = 3600.0,
+#
+ aqhstartdate1     = 19920101,
+ aqhstartdate2     = 000000,
+ aqhperiod         = 3600.0,
+#
+# apressurestartdate1     = 19920101,
+# apressurestartdate2     = 000000,
+# apressureperiod         = 3600.0,
+#
+ precipstartdate1  = 19920101,
+ precipstartdate2  = 003000,
+ precipperiod      = 3600.0,
+#
+ runoffperiod      = 0,
+#
+ uwindstartdate1   = 19920101,
+ uwindstartdate2   = 000000,
+ uwindperiod       = 3600.0,
+#
+ vwindstartdate1   = 19920101,
+ vwindstartdate2   = 000000,
+ vwindperiod       = 3600.0,
+#
+ swdownstartdate1  = 19920101,
+ swdownstartdate2  = 003000,
+ swdownperiod      = 3600.0,
+#
+ lwdownstartdate1  = 19920101,
+ lwdownstartdate2  = 003000,
+ lwdownperiod      = 3600.0,
+ &
+#
+ &EXF_NML_03
+ exf_offset_atemp   = 273.15,
+ exf_inscal_swdown  = -1.0,
+ exf_inscal_lwdown  = -1.0,
+# exf_inscal_uwind = 1.2,
+# exf_inscal_vwind = 1.2,
+ &
+#
+ &EXF_NML_04
+ runoff_interpMethod = 0,
+ atemp_interpMethod = 0,
+ aqh_interpMethod = 0,
+# apressure_interpMethod = 0,
+ precip_interpMethod = 0,
+ uwind_interpMethod = 0,
+ vwind_interpMethod = 0,
+ swdown_interpMethod = 0,
+ lwdown_interpMethod = 0,
+#
+ /
+#
+ &EXF_NML_OBCS
+#
+# obcsNstartdate1     = 20081216,
+ obcsNstartdate1     = 20120116,
+ obcsNstartdate2     = 00000,
+ obcsNperiod         = 2629800,
+#
+ /
